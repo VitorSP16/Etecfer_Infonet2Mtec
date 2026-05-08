@@ -40,7 +40,7 @@ public class AlunoController {
     public String listar(Model  model) {
         List<Aluno>alunos= alunoService.findAll();
         model.addAttribute("alunos",alunos);
-        return "alunos/ListarAlunos";
+        return "alunos/listarAlunos";
     }
 
     // Metodo para criar um formulario com um novo objeto aluno
