@@ -31,16 +31,14 @@ public class AlunoController {
     @PostMapping("/salvar")
     public String salvar(@ModelAttribute Aluno aluno) {
         alunoService.save(aluno);
-        
-        
         return "redirect:/alunos/listar";
     }
      
-    @GetMapping("/Listar")
+    @GetMapping("/listar")
     public String listar(Model  model) {
-        List<Aluno>alunos= alunoService.findAll();
-        model.addAttribute("alunos",alunos);
-        return "alunos/listarAlunos";
+        List<Aluno> alunos = alunoService.findAll();
+        model.addAttribute("alunos", alunos);
+        return "aluno/listarAlunos";
     }
 
     // Metodo para criar um formulario com um novo objeto aluno

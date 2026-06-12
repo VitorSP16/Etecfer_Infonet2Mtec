@@ -20,15 +20,15 @@
             <th>CPF</th>
             <th colspan="2">Ações</th>
         </tr>
-        <tr th:each="aluno : ${aluno}">
-            <td th:text="${aluno.nomeAluno">#</td>
-            <td th:text="${aluno.emailAluno">#</td> 
-            <td th:text="${aluno.telefoneAluno">#</td>
-            <td th:text="${aluno.raAluno">#</td>
-            <td th:text="${aluno.cpfAluno">#</td>  
+        <tr th:each="aluno : ${alunos}">
+            <td th:text="${aluno.nomeAluno}">#</td>
+            <td th:text="${aluno.emailAluno}">#</td> 
+            <td th:text="${aluno.telefoneAluno}">#</td>
+            <td th:text="${aluno.raAluno}">#</td>
+            <td th:text="${aluno.cpfAluno}">#</td>  
             <td>
-                <a th:href="@(/alunos/editar/excluir/(id)(id=${aluno.idAluno})}">Editar</a>
-                <a th:href="@(/alunos/editar/excluir/(id)(id=${aluno.idAluno})}">Excluir</a>
+                <a th:href="@{/alunos/editar/(id)(id=${aluno.idAluno})}">Editar</a>
+                <a th:href="@{/alunos/excluir/(id)(id=${aluno.idAluno})}">Excluir</a>
             </td>          
         </tr>
      </table>
