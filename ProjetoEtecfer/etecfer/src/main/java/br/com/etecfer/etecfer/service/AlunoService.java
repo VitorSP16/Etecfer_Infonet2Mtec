@@ -22,4 +22,12 @@ public class AlunoService {
      public List<Aluno>findAll(){
         return alunoRepository.findAll();
      }
+    //  Metodo para excluir aluno pelo id 
+     public void deleteById(Integer id){
+      alunoRepository.deleteById(id);
+     } 
+    //  Metodo para buscar o aluno pelo Id
+    public Aluno findById(Integer id){
+      return alunoRepository.findById(id).orElse(null);
+    }
 }

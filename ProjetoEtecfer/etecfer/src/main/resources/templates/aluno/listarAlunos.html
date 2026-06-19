@@ -27,8 +27,8 @@
             <td th:text="${aluno.raAluno}">#</td>
             <td th:text="${aluno.cpfAluno}">#</td>  
             <td>
-                <a th:href="@{/alunos/editar/(id)(id=${aluno.idAluno})}">Editar</a>
-                <a th:href="@{/alunos/excluir/(id)(id=${aluno.idAluno})}">Excluir</a>
+                <a th:href="@{/alunos/editar/{id}(id=${aluno.idAluno})}">Editar</a>
+                <a th:href="@{/alunos/excluir/{id}(id=${aluno.idAluno})}">Excluir</a>
             </td>          
         </tr>
      </table>
