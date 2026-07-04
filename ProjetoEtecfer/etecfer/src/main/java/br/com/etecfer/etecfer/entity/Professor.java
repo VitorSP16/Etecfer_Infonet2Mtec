@@ -33,6 +33,4 @@ import lombok.Setter;
   @Column(nullable = false)
   private String graduacaoProfessor;
 
-public void save(Professor professor) {
-}
  }

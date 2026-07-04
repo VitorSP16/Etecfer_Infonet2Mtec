@@ -22,43 +22,43 @@ import br.com.etecfer.etecfer.service.ProfessorService;
 
 public class ProfessorController {
    
-    //Injeção de depenedentes da service para a classe Curso
+    //Injeção de depenedentes da service para a classe Professor 
     @Autowired
     private ProfessorService professorService;
 
-    // Metodo para salvar um Curso 
+    // Metodo para salvar um Professor 
     @PostMapping("/salvar")
     public String salvar(@ModelAttribute Professor professor ) {
-        professor.save(professor);
+        professorService.save(professor);
         return "redirect:/professores/listar" ;
     }
 
-     // Metodo para criar um formulario com um novo objeto Curso
+     // Metodo para criar um formulario com um novo objeto Professor 
      @GetMapping("/listar")
      public String listar (Model model) {
          List<Professor> professores = professorService.findAll();
          model.addAttribute("professores", professores);
-         return "professores/listarprofessores";
+         return "professor/listarProfessores";
      }
 
-      // Metodo para criar um formulario com um novo objeto curso
+      // Metodo para criar um formulario com um novo objeto Professor 
       @GetMapping("/criar")
       public String criarForm(Model model) {
-        model.addAttribute("curso", new Professor());
+        model.addAttribute("professor", new Professor());
           return "professor/formularioProfessor";
       }
-      // Metodo para Excluir um cursos
+      // Metodo para Excluir um Professor 
       @GetMapping("/excluir/{id}")
       public String  excluir(@PathVariable("id")  Integer id) {
            professorService.deleteById(id);
            return "redirect:/professores/listar";
       }
-
+    //   Metodo para editar um Professor 
       @GetMapping("/editar/{id}")
       public String editarForm(@PathVariable("id") Integer id, Model model) {
       Professor professor = professorService.findById(id);
       model.addAttribute("professor", professor);
-      return "disciplina/formularioDisciplina";
+      return "professor/formularioProfessor";
       }
 
 }
