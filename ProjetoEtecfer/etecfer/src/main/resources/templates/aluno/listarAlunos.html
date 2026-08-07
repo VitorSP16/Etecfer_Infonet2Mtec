@@ -4,33 +4,91 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
     <title>Lista de Alunos</title>
 </head>
-<body>
-     <h1 style="text-align: center;">Lista de Alunos </h1>
-     <h3 style="text-align: center;">
-      <a href="/alunos/criar"> Novo Aluno</a>
-    </h3>
-     <table border="1" align="center">
-        <tr>
-            <th>Nome</th>
-            <th>E-mail</th>
-            <th>Telefone</th>
-            <th>RA</th>
-            <th>CPF</th>
-            <th colspan="2">Ações</th>
-        </tr>
-        <tr th:each="aluno : ${alunos}">
-            <td th:text="${aluno.nomeAluno}">#</td>
-            <td th:text="${aluno.emailAluno}">#</td> 
-            <td th:text="${aluno.telefoneAluno}">#</td>
-            <td th:text="${aluno.raAluno}">#</td>
-            <td th:text="${aluno.cpfAluno}">#</td>  
-            <td>
-                <a th:href="@{/alunos/editar/{id}(id=${aluno.idAluno})}">Editar</a>
-                <a th:href="@{/alunos/excluir/{id}(id=${aluno.idAluno})}">Excluir</a>
-            </td>          
-        </tr>
-     </table>
+<body class="bg-light">
+
+    <!-- Mesma navbar da index -->
+    <nav class="navbar navbar-dark bg-dark shadow">
+        <div class="container">
+            <span class="navbar-brand fs-3 fw-bold">
+                Sistema EtecFer
+            </span>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+
+        <!-- Título e botão -->
+        <div class="d-flex justify-content-between align-items-center mb-4">  <!--o justify ...-->
+            <h2>Lista de Alunos</h2>
+
+            <a href="/alunos/criar" class="btn btn-success">
+                + Novo Aluno
+            </a>
+        </div>
+
+        <!-- Card -->
+        <div class="card shadow">
+
+            <div class="card-body">
+
+                <table class="table table-striped table-hover align-middle">
+
+                    <thead class="table-dark">
+                        <tr>
+                            <th>Nome</th>
+                            <th>E-mail</th>
+                            <th>Telefone</th>
+                            <th>RA</th>
+                            <th>CPF</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <tr th:each="aluno : ${alunos}">
+                            <td th:text="${aluno.nomeAluno}"></td>
+                            <td th:text="${aluno.emailAluno}"></td>
+                            <td th:text="${aluno.telefoneAluno}"></td>
+                            <td th:text="${aluno.raAluno}"></td>
+                            <td th:text="${aluno.cpfAluno}"></td>
+
+                            <td>
+
+                                <a class="btn btn-warning btn-sm"
+                                   th:href="@{/alunos/editar/{id}(id=${aluno.idAluno})}">
+                                    Editar
+                                </a>
+
+                                <a class="btn btn-danger btn-sm"
+                                   th:href="@{/alunos/excluir/{id}(id=${aluno.idAluno})}">
+                                    Excluir
+                                </a>
+
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+        <div class="mt-4">
+            <a href="/" class="btn btn-secondary">
+                ← Voltar ao Menu
+            </a>
+        </div>
+
+    </div>
+
 </body>
 </html>

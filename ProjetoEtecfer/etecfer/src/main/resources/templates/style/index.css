@@ -1,0 +1,14 @@
+.card{
+    transition: 0.3s;
+    border: none;
+    border-radius: 15px;
+}
+
+.card:hover{
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0,0,0,.2) !important;
+}
+
+.navbar-brand{
+    font-weight: bold;
+}

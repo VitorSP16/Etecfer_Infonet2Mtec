@@ -4,13 +4,103 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+     <link rel="stylesheet" href="/ProjetoEtecfer/etecfer/src/main/resources/templates/style/index.css">
     <title>Sistema EtecFer</title>
+    <!-- Alguns comentarios serão para mim no futuro estar dando aquela refrescada na memoria 😁 -->
 </head>
-<body>
-     <h1 style="text-align: center;">Seja bem vindo(a) ao EtecFer</h1>
-     <a href="/alunos/listar">Gerenciar Alunos</a>
-     <a href="/professores/listar">Gerenciar professores</a>
-     <a href="/cursos/listar">Gerenciar Cursos</a>
-     <a href="/disciplinas/listar">Gerenciar disciplinas</a>
+<!-- fundo cinza pra nois  -->
+<body class="bg-light">
+
+    <!-- Barra Superior -->
+    <nav class="navbar navbar-dark bg-dark shadow">  <!--navbar-dark deixa transforma as letras em branca com fundo preto-->
+        <!-- navbar é uma classe do css -->
+        <div class="container">
+            <span class="navbar-brand fs-3 fw-bold">   <!--nav-brand é o estilo do titulo da navbares-->
+                <!-- fs-3 é o tamanho das palavras e o fw-bold é negrito da parada -->
+                Sistema EtecFer
+            </span>
+        </div>
+    </nav>
+
+    <div class="container py-5">   <!--container pra dar aquela centralizada ,p=padding ,o y é o eixo vertical como no plano cartesiano e o 5 o espaçamento -->
+
+        <h2 class="text-center mb-5"> <!--mb é o margin bottom-->
+            Seja bem-vindo(a) ao EtecFer
+        </h2>
+
+        <div class="row g-4">  <!--g é o espaço entre colunas -->
+
+            <!-- Alunos -->
+            <div class="col-md-6 col-lg-3">
+                <div class="card shadow h-100 text-center"> <!--h-100 faz todos terem os mesmas alturas -->
+                    <div class="card-body">  <!--É o corpo do card-->
+                        <h3>🎓</h3>
+                        <h5 class="card-title">Alunos</h5>
+                        <p class="card-text">
+                            Cadastro e gerenciamento dos alunos.
+                        </p>
+                        <a href="/alunos/listar" class="btn btn-primary w-100"> <!--w-100 define a largura em 100% e btn são os lindos botões -->
+                            Gerenciar
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Professores -->
+            <div class="col-md-6 col-lg-3">
+                <div class="card shadow h-100 text-center">
+                    <div class="card-body">
+                        <h3>👨‍🏫</h3>
+                        <h5 class="card-title">Professores</h5>
+                        <p class="card-text">
+                            Cadastro dos professores.
+                        </p>
+                        <a href="/professores/listar" class="btn btn-success w-100">
+                            Gerenciar
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cursos -->
+            <div class="col-md-6 col-lg-3">
+                <div class="card shadow h-100 text-center">
+                    <div class="card-body">
+                        <h3>📚</h3>
+                        <h5 class="card-title">Cursos</h5>
+                        <p class="card-text">
+                            Administração dos cursos.
+                        </p>
+                        <a href="/cursos/listar" class="btn btn-warning w-100">
+                            Gerenciar
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Disciplinas -->
+            <div class="col-md-6 col-lg-3">
+                <div class="card shadow h-100 text-center">
+                    <div class="card-body">
+                        <h3>📖</h3>
+                        <h5 class="card-title">Disciplinas</h5>
+                        <p class="card-text">
+                            Cadastro das disciplinas.
+                        </p>
+                        <a href="/disciplinas/listar" class="btn btn-danger w-100">
+                            Gerenciar
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>
