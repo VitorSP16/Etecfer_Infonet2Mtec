@@ -1,30 +1,75 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario de Curso</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <title>Formulário de Curso</title>
 </head>
-<body>
-    <h1 style="text-align: center;"> Cadastrar curso</h1>
+<body class="bg-light">
 
-    <form th:action="@{/cursos/salvar}" method="post" th:object="${curso}">
-      
-      <input type="hidden" th:field="*{idCurso}"/>
-      <label for="">Nome:</label>
-      <input type="text" th:field="*{nomeCurso}"/>
-      <br/>
+    <nav class="navbar navbar-dark bg-dark shadow">
+        <div class="container">
+            <span class="navbar-brand fs-3 fw-bold">
+                Sistema EtecFer
+            </span>
+        </div>
+    </nav>
 
-      <label for="">Periodo:</label>
-      <input type="text" th:field="*{periodoCurso}"/>
-      <br/>
+    <div class="container mt-5">
 
-      <label for="">Carga Horaria:</label>
-      <input type="text" th:field="*{chCurso}"/>
-      <br/>
+        <div class="mb-4">
+            <h2>Cadastrar Curso</h2>
+        </div>
 
-     <input type="submit" value="salvar"/>
-    </form>
+        <div class="card shadow">
+            <div class="card-body p-4">
+
+                <form th:action="@{/cursos/salvar}" method="post" th:object="${curso}">
+                    
+                    <input type="hidden" th:field="*{idCurso}"/>
+
+                    <div class="mb-3">
+                        <label for="nomeCurso" class="form-label">Nome do Curso:</label>
+                        <input type="text" id="nomeCurso" class="form-control" th:field="*{nomeCurso}" placeholder="Ex: Desenvolvimento de Sistemas" required />
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="periodoCurso" class="form-label">Período:</label>
+                            <input type="text" id="periodoCurso" class="form-control" th:field="*{periodoCurso}" placeholder="Ex: Matutino / Noturno" />
+                        </div>
+
+                        <div class="col-md-6 mb-4">
+                            <label for="chCurso" class="form-label">Carga Horária:</label>
+                            <input type="text" id="chCurso" class="form-control" th:field="*{chCurso}" placeholder="Ex: 1200h" />
+                        </div>
+                    </div>
+
+                    <div class="d-flex gap-2">
+                        <button type="submit" class="btn btn-success">
+                            Salvar
+                        </button>
+                        <a href="/cursos" class="btn btn-secondary">
+                            Cancelar
+                        </a>
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+
+        <div class="mt-4">
+            <a href="/cursos" class="btn btn-outline-secondary">
+                ← Voltar para a Lista
+            </a>
+        </div>
+
+    </div>
+
 </body>
 </html>
