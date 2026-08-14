@@ -45,6 +45,7 @@
                             <th>Telefone</th>
                             <th>RA</th>
                             <th>CPF</th>
+                            <th>Curso</th>
                             <th>Ações</th>
                         </tr>
                     </thead>
@@ -57,7 +58,7 @@
                             <td th:text="${aluno.telefoneAluno}"></td>
                             <td th:text="${aluno.raAluno}"></td>
                             <td th:text="${aluno.cpfAluno}"></td>
-
+                            <td th:text="${aluno.curso.nomeCurso}"></td>
                             <td>
 
                                 <a class="btn btn-warning btn-sm"

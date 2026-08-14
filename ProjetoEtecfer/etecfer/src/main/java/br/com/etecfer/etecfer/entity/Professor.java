@@ -24,7 +24,7 @@ import lombok.Setter;
   @Column(nullable = false,length = 40)
   private  String nomeProfessor;
 
-  @Column(nullable = false,length = 9)
+  @Column(nullable = false,length = 11)
   private String telProfessor;
 
   @Column(nullable = false,length = 11)

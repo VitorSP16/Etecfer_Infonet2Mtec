@@ -47,6 +47,21 @@
                             <label for="cargahDisciplina" class="form-label">Carga Horária:</label>
                             <input type="text" id="cargahDisciplina" class="form-control" th:field="*{cargahDisciplina}" placeholder="Ex: 80h" />
                         </div>
+                        <div>
+                            <label for="idCurso">Curso:</label>
+                            <select  th:field="*{curso}"name="" id="">
+                                <option value="" disabled selected>Selecione um curso</option>
+                                <option  th:each="curso :${cursos}" th:text="${curso.nomeCurso}" th:value="${curso.idCurso}"value=""></option>
+                            </select>
+                         
+                        </div>
+                        <div>
+                            <label for="idProfessor">Professor:</label>
+                        <select  th:field="*{professor}"name="" id="">
+                            <option value="" disabled selected>Selecione um curso</option>
+                            <option  th:each="professor :${professores}" th:text="${professor.nomeProfessor}" th:value="${professor.idProfessor}"value=""></option>
+                        </select>
+                        </div>
                     </div>
 
                     <div class="d-flex gap-2">
