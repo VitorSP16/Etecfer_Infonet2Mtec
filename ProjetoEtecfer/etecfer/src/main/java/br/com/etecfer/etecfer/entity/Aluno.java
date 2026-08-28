@@ -42,4 +42,5 @@ public class Aluno {
      @JoinColumn(name = "idCurso_fk")
      private Curso curso;
     
+     
 }

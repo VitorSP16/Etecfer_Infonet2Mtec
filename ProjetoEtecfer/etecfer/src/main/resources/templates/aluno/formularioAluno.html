@@ -59,14 +59,18 @@
                         <input type="text" id="cpfAluno" class="form-control" th:field="*{cpfAluno}" placeholder="000.000.000-00" />
                     </div>
                      
-                     <div class="mb-4"> 
-                        <label for="idCurso">Curso:</label>
-                        <select  th:field="*{curso}"name="" id="">
-                            <option value="" disabled selected>Selecione um curso</option>
-                            <option  th:each="curso :${cursos}" th:text="${curso.nomeCurso}" th:value="${curso.idCurso}"value=""></option>
+                    <div class="col-md-6 mb-4">
+                        <label for="idCurso" class="form-label">Curso:</label>
+                    
+                        <select th:field="*{curso}" id="idCurso" class="form-select">
+                            <option value="" disabled>Selecione um curso</option>
+                    
+                            <option th:each="curso : ${cursos}"
+                                    th:text="${curso.nomeCurso}"
+                                    th:value="${curso.idCurso}">
+                            </option>
                         </select>
-                     </div>
-
+                    </div>
                     <div class="d-flex gap-2">
                         <button type="submit" class="btn btn-success">
                             Salvar
